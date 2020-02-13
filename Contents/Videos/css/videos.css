@@ -15,7 +15,7 @@
 .tradeslider {
     padding-top: 15px;
     background: white;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
     text-align: center;
 }
 .slider-nav {
@@ -56,7 +56,7 @@ img#playPause {
     position: absolute;
     left: 47%;
     left: 505px;
-    top: 87%;
+    top: 88%;
     width: 70px;
 }
 

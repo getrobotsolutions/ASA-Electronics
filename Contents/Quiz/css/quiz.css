@@ -82,7 +82,7 @@ p.ResultContent {
     float: left;
 }
 button#SignUppGame {
-    margin-left: 124px;
+    margin-left: 104px;
     background: #cf7c00;
     color: white;
     border: none;
@@ -104,6 +104,7 @@ button#SignUppGame {
     text-transform: uppercase;
     margin-right: 20px;
     vertical-align: middle;
+    text-align
 }
 .inputgroup {
     margin-top: 15px;
@@ -380,4 +381,5 @@ button#SignUppGame {
 }
 #name, #email{
   background: white !important;
+  color: black !important;
 }

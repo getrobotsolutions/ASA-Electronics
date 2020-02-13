@@ -14,12 +14,42 @@ Value1,Value2,Value3,Value4,Value5,
 Value6,Value7,Value8,Value9,Value10;
 
 //firt Tab signUp button Event
-    SignUpGame =document.getElementById('SignUppGame');
+  SignUpGame =document.getElementById('SignUppGame');
+
   SignUpGame.addEventListener('click',function () {
+    if ($('#name').val() =="") {
+      alert("Please enter name");
+      document.gameform.name.focus();
+      return;
+    }
+    else if ($('#email').val() =="") {
+      alert("Please enter email address");
+      document.gameform.email.focus();
+      return;
+    }
+    else if ($('#email').val() !="") {
+      if(ValidateEmail($('#email').val())==true);
+      else{
+        alert("You have entered an invalid email address!");
+        document.gameform.email.focus();
+        return
+      }
+    }
+
   document.querySelector('.tab1').style.display = 'none';
   document.querySelector('.tab2').style.display = 'block';
   document.querySelector('.tab2').style.animation = 'slide-down .4s ease-out';
   });
+
+  //Start Fuction to validate email address
+  function ValidateEmail(inputText){
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(inputText.match(mailformat))
+      return true;
+    else
+      return false;
+  }
+  //End Fuction to validate email address
 
 //Second tab 1st Question
   q1selectAns = document.querySelectorAll('.q1');
@@ -186,8 +216,8 @@ Value6,Value7,Value8,Value9,Value10;
      document.querySelector('.result').value = 'Got Result 4';
      }
 
-
-   // document.querySelector('.showScore').innerText = 'You Scored : ' + totalScore;
+alert(totalScore);
+   //document.querySelector('.showScore').innerText = 'You Scored : ' + totalScore;
     document.querySelector('.score').value = totalScore;
     if (i == 4) {
                     formdata = $("#gameform").serialize();

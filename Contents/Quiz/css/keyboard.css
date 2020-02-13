@@ -3,7 +3,7 @@
 	text-align: center;
 	padding: .3em;
 	position: absolute;
-	left: 0;
+	left: 154px !important;
 	top: 0;
 	z-index: 16000;
 	/* see issue #484 */
@@ -22,12 +22,13 @@
 
 .ui-keyboard-button {
 	height: 3em;
-	min-width: 2em;
+	min-width: 2.2em;
 	margin: .1em;
 	cursor: pointer;
 	overflow: hidden;
 	line-height: 2em;
 	-moz-user-focus: ignore;
+	font-size: 1.3em !important;
 }
 .ui-keyboard-button span {
 	padding: 0;
