@@ -12,11 +12,12 @@
 
         var speak = new Array( );
         speak[0] = "";
-        speak[1] = "Take a picture with me.";
-        speak[2] = "Pick a song and let's boogie.";
+        speak[1] = "";
+        speak[2] = "";
+        speak[3] = "";
+        speak[4] = "Take a picture with me.";
+        speak[5] = "Pick a song and let's boogie.";
         speak[3] = "Become a robot.";
-        speak[4] = "Check out some of our products";
-        speak[5] = "";
 
 //window.external.ChangeLanguage("en-us");
 function FC_ContentsCall(strContentsName, strLanguage)
@@ -35,46 +36,29 @@ function FC_ContentsCall(strContentsName, strLanguage)
 
         case "PrizeWheel":
            location.href = "Contents/PrizeWheel/index.html";
-            //PlaySpeech(speak[4]);
+            //PlaySpeech(speak[0]);
            break;
 
-        case "Selfie":
-            location.href = "../../Contents/Selfie/index.html";
-            PlaySpeech(speak[1]);
-            break;
+        case "Quiz":
+           location.href = "Contents/Quiz/index.html";
+            //PlaySpeech(speak[1]);
+           break;
 
-        case "Dance":
-            location.href = "Contents/Dance/index.html";
-            PlaySpeech(speak[2]);
+        case "Website":
+            location.href = "Contents/Website/index.html";
+            //PlaySpeech(speak[2]);
             break;
 
         case "Videos":
             location.href = "Contents/Videos/index.html";
-           /* PlaySpeech(speak[2]); */
-            break;
-
-        case "Avatar":
-            location.href = "../../Contents/RobotAvatar/index.htm";
-            PlaySpeech(speak[3]);
+           /* PlaySpeech(speak[3]); */
             break;
 
 
-        case "Photo":
-            location.href = "Contents/Photo/index.html";
-            //PlaySpeech(speak[5]);
-            break;
-
-        case "BackPhoto":
-            location.href = "../../Contents/Photo/index.html";
-            //PlaySpeech(speak[5]);
-            break;
-
-         case "Website":
-            location.href = "Contents/Website/index.html";
-            //PlaySpeech(speak[5]);
-            break;
-        
-        
+        case "Selfie":
+            location.href = "Contents/Selfie/index.html";
+            PlaySpeech(speak[4]);
+            break;        
         
             
         case "Config":
