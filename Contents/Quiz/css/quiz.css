@@ -57,10 +57,13 @@ img {
 .Result {
     display: block;
     background: white;
-    width: 85%!important;
+    width: 90%!important;
     padding: 0px;
     margin: 230px auto 0 auto;
     box-sizing: border-box;
+}
+.Result div{
+  padding: 10px 10px 20px 10px;
 }
 h1.ResultHead {
     background: #cf7c00;
@@ -75,6 +78,8 @@ img#Resultimg {
 p.ResultContent {
     font-size: 33px;
     padding: 15px;
+    width: 550px;
+    float: left;
 }
 button#SignUppGame {
     margin-left: 124px;
@@ -164,7 +169,7 @@ button#SignUppGame {
   background-image: url(../images/Q2A.png);
 }
 .Q2B {
-  background-image: url(../images/Q2C.png);
+  background-image: url(../images/Q2B.png);
 }
 .Q2C{
   background-image: url(../images/Q2C.png);
@@ -372,4 +377,7 @@ button#SignUppGame {
 @-moz-keyframes slide-down {
       0% { opacity: 0; -moz-transform: translateY(-100%); }   
     100% { opacity: 1; -moz-transform: translateY(0); }
+}
+#name, #email{
+  background: white !important;
 }

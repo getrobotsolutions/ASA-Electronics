@@ -8,9 +8,10 @@
     <script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../Scripts/Language.js"></script>
-    <script src="../../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script language="JavaScript" type="text/javascript" src="../../maincontents.js"></script>
-    <script src="../../boots/js/bootstrap.min.js"></script>
+    <!--<script src="../../boots/js/bootstrap.min.js"></script>-->
     
 
     <link href="../../css/Main.css" rel="stylesheet" type="text/css" />
@@ -18,6 +19,21 @@
     <link href="../../css/Main.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- jQuery & jQuery UI + theme (required) -->
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
+  <script src="js/jquery-latest.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>  
+  <!--<script src="js/bootstrap.min.js"></script>
+   jQuery & jQuery UI + theme (required) -->
+
+  <!-- keyboard widget css & script (required) -->
+  <link href="css/keyboard.css" rel="stylesheet">
+  <script src="js/jquery.keyboard.js"></script>
+  <!-- keyboard widget css & script (required) -->
+
+  <!--<link rel="stylesheet" href="../../style.css">-->
     
 </head>
 
@@ -34,19 +50,19 @@
    <h1 class="title">How good is your driving?
 </h1>
 <main>
-  <form onsubmit="return formSubmit();" id="gameform" method="POST" action="" >
+  <form onsubmit="return formSubmit();" id="gameform" method="POST" action=""  >
 
     <div class="tab1 tab-panel">
-        <div class="inputHead">Please sign up for playing game</div>
+        <div class="inputHead">Please sign up to play game</div>
       <div class="qcont">
         <div class="inputgroup">
-        <label style="margin-right: 33px;">Name </label><input type="text" name="username" value="" required="">
+        <label style="margin-right: 33px;">Name </label><input id="name" type="text" name="username" value="" required="">
        </div>
        <div class="inputgroup">
              <label>Email </label>
-             <input type="email" name="email" value="" required="">
+             <input type="email" id="email" name="email" value="" required="">
        </div>
-       <button id="SignUppGame" type="button"> Sign Up for play</button>
+       <button id="SignUppGame" type="button">Sign Up T Play</button>
       </div>
     </div>
 
@@ -346,7 +362,7 @@
   <!--------Result 1--------->
   <div class="Result" style="width: 100%;" id="Res1">
   <h1 class="ResultHead">Get off the road!</h1>
-  <div style="display: flex;">
+  <div>
     <p class="ResultContent">Whoa there, speed racer! We’re not saying you’re a bad driver. . . just that you might need all the help you can get. Our new auto-calibrating 360-degree camera system will give you an extra set of eyes all the way around your vehicle.</p>
     <img src="images/Result1.png" id="Resultimg">
   </div>
@@ -356,7 +372,7 @@
   <!--------Result 2--------->
   <div class="Result" style="width: 100%;" id="Res2">
   <h1 class="ResultHead">Student Driver</h1>
-  <div style="display: flex;">
+  <div>
     <p class="ResultContent">You aren’t the worst driver we’ve ever seen but you could use some assistance to keep you focused. Our blind spot detection system is designed to give you advanced warning if something is in the way when you go to change lanes.</p>
     <img src="images/Result2.png" id="Resultimg">
   </div>
@@ -366,7 +382,7 @@
   <!--------Result 3--------->
   <div class="Result" style="width: 100%;" id="Res3">
   <h1 class="ResultHead">Not too shabby</h1>
-  <div style="display: flex;">
+  <div>
     <p class="ResultContent">You’re pretty good at this driving thing. But like mom always said, it helps to have eyes in the back of your head. Grab one of our high definition back up cameras and you’ll be good to go. </p>
     <img src="images/Result3.png" id="Resultimg">
   </div>
@@ -376,7 +392,7 @@
   <!--------Result 4--------->
   <div class="Result" style="width: 100%;" id="Res4">
   <h1 class="ResultHead">You should teach driver’s ed!</h1>
-  <div style="display: flex;">
+  <div >
     <p class="ResultContent">You’re comfortable and confident behind the wheel, and it shows! But not everyone on the road is as great a driver as you are. Check out our forward-facing cameras so you have a little extra insurance. . . just in case.</p>
     <img src="images/Result4.png" id="Resultimg">
   </div>
@@ -398,51 +414,53 @@
 
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="application/javascript">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 
-  function JSUnload(){
-    window.external.RobotDanceStart(false);
-  }
-   
-</script>
     <script src="js/quiz.js"></script>
 
 <script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
 
 <script language="javascript" type="text/javascript">
-    window.history.forward();
+
+  $(function(){
+      $('#name, #email').keyboard({
+        // keep any changes
+        usePreview: true, // disabled for contenteditable
+        autoAccept: true,
+        display: {
+            'accept' : 'Enter'
+        },
+        layout: 'custom',
+        customLayout: {
+          'normal': [
+            '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+            '{tab} q w e r t y u i o p [ ] \\',
+            'a s d f g h j k l ; \'',
+            '{shift} z x c v b n m , . / {shift}',
+            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
+          ],
+          'shift': [
+            '~ ! @ # $ % ^ & * ( ) _ + {bksp}',
+            '{tab} Q W E R T Y U I O P { } |',
+            'A S D F G H J K L : " {enter}',
+            '{shift} Z X C V B N M &lt; &gt; ? {shift}',
+            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
+          ]
+        }
+    });
+    });1
+   
 </script>
-<!----<script type="text/javascript">
-var formdata;
-    function formSubmit(){
-   // alert('submit');
-    formdata = $("#gameform").serialize();
-   $.ajax({
-    type:'POST',
-    url:'http://poundland.pk/AppsImpData/game.php',
-    data:formdata,
-    
-   success:function (response) {
-    document.getElementById('success').style.display = 'block';
-   $('#success').html(response);
-   }
-  });
-}
-  //formSubmit();
-
-
-</script>---->
 
 
 <style type="text/css">
   .main-content {
     height: 1070px;
-}
-.title {
+  }
+  .title {
     font-size: 55px;}
 
-form input[type="text"], form input[type="email"] {
+  form input[type="text"], form input[type="email"] {
     width: 230px!important;
     height: 35px!important;
     border: 1px solid #cf7c0033;
