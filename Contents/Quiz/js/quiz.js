@@ -216,7 +216,7 @@ Value6,Value7,Value8,Value9,Value10;
      document.querySelector('.result').value = 'Got Result 4';
      }
 
-alert(totalScore);
+//alert(totalScore);
    //document.querySelector('.showScore').innerText = 'You Scored : ' + totalScore;
     document.querySelector('.score').value = totalScore;
     if (i == 4) {
