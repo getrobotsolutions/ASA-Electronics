@@ -261,7 +261,7 @@ function SendEmail()
         data: { 
             'fileNAME':tempfilename,
            'email':tempEmail,
-           'apID':'McKesson'
+           'apID':'ASA-Electronics'
         }
       }).done(function(response) {
         console.log('saved: ' + response); 
