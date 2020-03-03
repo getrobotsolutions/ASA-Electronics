@@ -167,7 +167,7 @@ function OnJoystickControlled(strPara){
 
     }
     if(btn_info[4] == '1'){
-        PlaySpeech("");
+        PlaySpeech("Hi, I like you, can I take your picture?");
     }
 }
 
