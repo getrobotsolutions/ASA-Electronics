@@ -11,10 +11,10 @@
         jokes[9]="Want to know my favorite dance? It’s the robot";
 
         var speak = new Array( );
-        speak[0] = "How luck do you feel?  Take a spin to win a prize.";
+        speak[0] = "How lucky do you feel?  Take a spin to win a prize.";
         speak[1] = "How good is your driving? ";
         speak[2] = "check out our website";
-        speak[3] = "";
+        speak[3] = "Check out this videos and expand your vision.";
         speak[4] = "Take a picture with me.";
         speak[5] = "Pick a song and let's boogie.";
         speak[3] = "Become a robot.";
@@ -51,7 +51,7 @@ function FC_ContentsCall(strContentsName, strLanguage)
 
         case "Videos":
             location.href = "Contents/Videos/index.html";
-           /* PlaySpeech(speak[3]); */
+            PlaySpeech(speak[3]);
             break;
 
 
