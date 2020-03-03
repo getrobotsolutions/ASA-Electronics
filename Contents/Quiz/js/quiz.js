@@ -237,5 +237,43 @@ Value6,Value7,Value8,Value9,Value10;
                 }
   
     });
-    }
+  }
 
+
+var element;
+var message = "";
+function ShowKeyboard(ele)
+{
+  //show keyboard
+  document.getElementById("keyboard").style.display = "block";
+  
+  //get current element id and assign it to element
+  element=document.getElementById(ele.id);
+}
+
+
+function HideKeyboard()
+{
+    document.getElementById("keyboard").style.display = "none";
+    message="";
+    document.getElementById("address").innerHTML = message;
+}
+function CloseKeyboard()
+{
+    document.getElementById("keyboard").style.display = "none";
+    message="";
+    document.getElementById("address").innerHTML = message;
+}
+
+function keyboard(strPara)
+{
+    if (strPara == "bs")
+        message = message.slice(0, -1);
+    else
+        message += strPara;
+
+    element.value=message;
+    //alert(element.value);
+
+    document.getElementById("address").innerHTML = message;
+}

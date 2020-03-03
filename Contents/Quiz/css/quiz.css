@@ -49,7 +49,7 @@ button#submitBtn {
     left: 75%;
 }
 img {
-    width: 200px;
+    /*width: 200px;*/
 }
 #Res1,#Res2,#Res3,#Res4{
   display: none;
@@ -382,4 +382,61 @@ button#SignUppGame {
 #name, #email{
   background: white !important;
   color: black !important;
+}
+
+
+.keyboard { 
+  text-align: center;
+  background-image: url('../../../assets/keyboard/keyboard_bg.png');
+  background-repeat: no-repeat;
+  width: 1080px;
+  /*margin-top: -453px;*/
+  position: absolute;
+  /*left: -50px;*/
+  top: 700px;
+    z-index: 101;
+}
+
+.top{
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-top: 15px;
+  text-align: right;
+}
+
+.address {
+    position: absolute;
+  left: 110px;
+  margin-top: 25px; 
+}
+
+.wrap {
+  margin-top: 30px;
+}
+
+.line01 {
+  
+}
+
+.line02 {
+  position:absolute;
+  margin-left: 60px;
+}
+
+.line03 {
+  margin-right: 80px;
+  margin-top: -95px;
+}
+
+.line04 {
+  margin-right: 40px;
+}
+
+.line05 {
+  
+}
+
+.enter {
+  margin-left: 880px;
+  margin-top: 3px;
 }

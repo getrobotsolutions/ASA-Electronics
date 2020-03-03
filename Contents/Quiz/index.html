@@ -19,21 +19,6 @@
     <link href="../../css/Main.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <!-- jQuery & jQuery UI + theme (required) -->
-  <link href="css/jquery-ui.min.css" rel="stylesheet">
-  <script src="js/jquery-latest.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>  
-  <!--<script src="js/bootstrap.min.js"></script>
-   jQuery & jQuery UI + theme (required) -->
-
-  <!-- keyboard widget css & script (required) -->
-  <link href="css/keyboard.css" rel="stylesheet">
-  <script src="js/jquery.keyboard.js"></script>
-  <!-- keyboard widget css & script (required) -->
-
-  <!--<link rel="stylesheet" href="../../style.css">-->
     
 </head>
 
@@ -56,11 +41,11 @@
         <div class="inputHead">Please sign up to play game</div>
       <div class="qcont">
         <div class="inputgroup">
-        <label style="margin-right: 25px;">Name</label><input id="name" type="text" name="username" value="" required="">
+        <label style="margin-right: 25px;">Name</label><input id="name" type="text" name="username" value="" required="" onclick="ShowKeyboard(this)">
        </div>
        <div class="inputgroup">
              <label>Email </label>
-             <input type="email" id="email" name="email" value="" required="">
+             <input type="email" id="email" name="email" value="" required="" onclick="ShowKeyboard(this)">
        </div>
        <button id="SignUppGame" type="button">Sign Up To Play</button>
       </div>
@@ -407,10 +392,79 @@
     <img src="../../assets/footer.png">
 </footer>
 
-<div id="dialog-overlay"></div>
-      <div id="dialog-box">
-        
-      </div>
+<div id="keyboard" class="keyboard" style="display: none">
+          <div class="top">
+            <font class="address" size="6px"><a id="address" onmousedown="return false"></a></font>
+            <img src="../../assets/keyboard/close.png" onclick="CloseKeyboard()"> &nbsp;
+            <img src="../../assets/keyboard/cancel.png" onclick="HideKeyboard()">
+          </div>
+          <div class="wrap" >
+            <div class="line01">
+              <img src="../../assets/keyboard/1.png" onclick="keyboard('1')">
+              <img src="../../assets/keyboard/2.png" onclick="keyboard('2')">
+              <img src="../../assets/keyboard/3.png" onclick="keyboard('3')">
+              <img src="../../assets/keyboard/4.png" onclick="keyboard('4')">
+              <img src="../../assets/keyboard/5.png" onclick="keyboard('5')">
+              <img src="../../assets/keyboard/6.png" onclick="keyboard('6')">
+              <img src="../../assets/keyboard/7.png" onclick="keyboard('7')">
+              <img src="../../assets/keyboard/8.png" onclick="keyboard('8')">
+              <img src="../../assets/keyboard/9.png" onclick="keyboard('9')">
+              <img src="../../assets/keyboard/0.png" onclick="keyboard('0')">
+              <img src="../../assets/keyboard/delete.png" onclick="keyboard('bs')">
+            </div>
+
+            <div class="line02">
+              <img src="../../assets/keyboard/q.png" onclick="keyboard('q')">
+              <img src="../../assets/keyboard/w.png" onclick="keyboard('w')">
+              <img src="../../assets/keyboard/e.png" onclick="keyboard('e')">
+              <img src="../../assets/keyboard/r.png" onclick="keyboard('r')">
+              <img src="../../assets/keyboard/t.png" onclick="keyboard('t')">
+              <img src="../../assets/keyboard/y.png" onclick="keyboard('y')">
+              <img src="../../assets/keyboard/u.png" onclick="keyboard('u')">
+              <img src="../../assets/keyboard/i.png" onclick="keyboard('i')">
+              <img src="../../assets/keyboard/o.png" onclick="keyboard('o')">
+              <img src="../../assets/keyboard/p.png" onclick="keyboard('p')">
+            </div>
+
+            <div class="enter" >
+              <img src="../../assets/keyboard/enter.png" onclick="send('1')">
+            </div>
+
+            <div class="line03">
+              <img src="../../assets/keyboard/a.png" onclick="keyboard('a')">
+              <img src="../../assets/keyboard/s.png" onclick="keyboard('s')">
+              <img src="../../assets/keyboard/d.png" onclick="keyboard('d')">
+              <img src="../../assets/keyboard/f.png" onclick="keyboard('f')">
+              <img src="../../assets/keyboard/g.png" onclick="keyboard('g')">
+              <img src="../../assets/keyboard/h.png" onclick="keyboard('h')">
+              <img src="../../assets/keyboard/j.png" onclick="keyboard('j')">
+              <img src="../../assets/keyboard/k.png" onclick="keyboard('k')">
+              <img src="../../assets/keyboard/l.png" onclick="keyboard('l')">
+            </div>
+
+            <div class="line04">
+              <img src="../../assets/keyboard/z.png" onclick="keyboard('z')">
+              <img src="../../assets/keyboard/x.png" onclick="keyboard('x')">
+              <img src="../../assets/keyboard/c.png" onclick="keyboard('c')">
+              <img src="../../assets/keyboard/v.png" onclick="keyboard('v')">
+              <img src="../../assets/keyboard/b.png" onclick="keyboard('b')">
+              <img src="../../assets/keyboard/n.png" onclick="keyboard('n')">
+              <img src="../../assets/keyboard/m.png" onclick="keyboard('m')">
+              <img src="../../assets/keyboard/..png" onclick="keyboard('.')">
+              <img src="../../assets/keyboard/exclamation.png" onclick="keyboard('!')">
+              <img src="../../assets/keyboard/question.png" onclick="keyboard('?')">
+            </div>
+
+            <div class="line05">
+              <img src="../../assets/keyboard/-.png" onclick="keyboard('-')">
+              <img src="../../assets/keyboard/_.png" onclick="keyboard('_')">
+              <img src="../../assets/keyboard/spacebar.png" onclick="keyboard(' ')">
+              <img src="../../assets/keyboard/@.png" onclick="keyboard('@')">
+              <img src="../../assets/keyboard/gmail.png" onclick="keyboard('gmail.com')">
+              <img src="../../assets/keyboard/com.png" onclick="keyboard('.com')">
+            </div>
+          </div>
+        </div>
 
 
 </body>
@@ -421,34 +475,6 @@
 <script language="JavaScript" type="text/javascript" src="../Common/Scripts/common-inner.js"></script>
 
 <script language="javascript" type="text/javascript">
-
-  $(function(){
-      $('#name, #email').keyboard({
-        // keep any changes
-        usePreview: true, // disabled for contenteditable
-        autoAccept: true,
-        display: {
-            'accept' : 'Enter'
-        },
-        layout: 'custom',
-        customLayout: {
-          'normal': [
-            '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-            '{tab} q w e r t y u i o p [ ] \\',
-            'a s d f g h j k l ; \'',
-            '{shift} z x c v b n m , . / {shift}',
-            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
-          ],
-          'shift': [
-            '~ ! @ # $ % ^ & * ( ) _ + {bksp}',
-            '{tab} Q W E R T Y U I O P { } |',
-            'A S D F G H J K L : " {enter}',
-            '{shift} Z X C V B N M &lt; &gt; ? {shift}',
-            '{accept} {space} {left} {right} {sp:.2} {del} {toggle}'
-          ]
-        }
-    });
-    });
    
 </script>
 

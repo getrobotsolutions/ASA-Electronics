@@ -11,9 +11,9 @@
         jokes[9]="Want to know my favorite dance? It’s the robot";
 
         var speak = new Array( );
-        speak[0] = "";
-        speak[1] = "";
-        speak[2] = "";
+        speak[0] = "How luck do you feel?  Take a spin to win a prize.";
+        speak[1] = "How good is your driving? ";
+        speak[2] = "check out our website";
         speak[3] = "";
         speak[4] = "Take a picture with me.";
         speak[5] = "Pick a song and let's boogie.";
@@ -36,17 +36,17 @@ function FC_ContentsCall(strContentsName, strLanguage)
 
         case "PrizeWheel":
            location.href = "Contents/PrizeWheel/index.html";
-            //PlaySpeech(speak[0]);
+            PlaySpeech(speak[0]);
            break;
 
         case "Quiz":
            location.href = "Contents/Quiz/index.html";
-            //PlaySpeech(speak[1]);
+            PlaySpeech(speak[1]);
            break;
 
         case "Website":
             location.href = "Contents/Website/index.html";
-            //PlaySpeech(speak[2]);
+            PlaySpeech(speak[2]);
             break;
 
         case "Videos":
