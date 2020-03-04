@@ -17,7 +17,7 @@
         speak[3] = "Check out this videos and expand your vision.";
         speak[4] = "Take a picture with me.";
         speak[5] = "Pick a song and let's boogie.";
-        speak[3] = "Become a robot.";
+        speak[6] = "Become a robot.";
 
 //window.external.ChangeLanguage("en-us");
 function FC_ContentsCall(strContentsName, strLanguage)
